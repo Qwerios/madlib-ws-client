@@ -35,8 +35,8 @@ To not have to mess around with event emitting and listening differences I decid
 
 ```javascript
 var WebSocket = require( "madlib-ws-client" );
-var client    = new WebSocket( "ws://echo.websocket.org/?encoding=text" )
-testString    = "Hello world!"
+var client    = new WebSocket( "ws://echo.websocket.org/?encoding=text" );
+testString    = "Hello world!";
 
 // Setup callbacks
 //
@@ -45,14 +45,14 @@ client.onOpen = function()
     // Once a connection is established we can send the echo test
     //
     client.send( testString );
-}
+};
 
 client.onMessage = function( response )
 {
     console.log( "Got echo response", response )
-}
+};
 
 // Connect to the echo server
 //
-client.connect()
+client.connect();
 ```
