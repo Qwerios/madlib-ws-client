@@ -51,6 +51,13 @@
                 @onOpen( data ) if typeof @onOpen is "function"
             )
 
+            socket.addEventListener( "close", ( data ) =>
+                console.log( "[MADLIB-SOCKET] close", data ) if @debug
+
+                @emit( "close", data )
+                @onClose( data ) if typeof @onClose is "function"
+            )
+
             socket.addEventListener( "message", ( data ) =>
                 console.log( "[MADLIB-SOCKET] message", data ) if @debug
 
