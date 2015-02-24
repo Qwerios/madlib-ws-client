@@ -26,6 +26,15 @@ For Titanium I'm relying on TiWS:
 $ npm install madlib-ws-client --save
 ```
 
+If you are using this in a titaniumifier (https://github.com/smclab/titaniumifier) project you will need to add a native dependency to the TiWS module in your package.json like so:
+```
+  "nativeDependencies": {
+    "net.iamyellow.tiws": "0.1.2"
+  },
+```
+
+Change the version number as required
+
 ## usage
 The WebSocket client is a very thin wrapper around the browsers native WebSocket support. This module does not polyfill WebSocket support for older browsers (IE8/9).
 
