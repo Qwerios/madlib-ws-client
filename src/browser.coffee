@@ -30,7 +30,8 @@
                 # https://github.com/omorandi/tiws
                 #
                 WebSocket = require( "net.iamyellow.tiws" )
-                @socket   = socket = new WebSocket( host )
+                @socket   = socket = WebSocket.createWS()
+                socket.open( host )
 
             else
                 throw "No websocket support available"
