@@ -19,7 +19,7 @@
             if WebSocket?
                 # NOTE: Only webbrowser websocket supports sub-protocols
                 #
-                @socket = socket = new WebSocket( host, subProtocols )
+                @socket = socket = new WebSocket( @host, subProtocols )
 
             else if Ti?
                 # The TiWS module will need to be installed for this to work in
@@ -31,7 +31,7 @@
                 #
                 WebSocket = require( "net.iamyellow.tiws" )
                 @socket   = socket = WebSocket.createWS()
-                socket.open( host )
+                socket.open( @host )
 
             else
                 throw "No websocket support available"
