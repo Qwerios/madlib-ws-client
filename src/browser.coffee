@@ -48,14 +48,12 @@
             socket.addEventListener( "open", ( data ) =>
                 console.log( "[MADLIB-SOCKET] open", data ) if @debug
 
-                @emit( "open", data )
                 @onOpen( data ) if typeof @onOpen is "function"
             )
 
             socket.addEventListener( "close", ( data ) =>
                 console.log( "[MADLIB-SOCKET] close", data ) if @debug
 
-                @emit( "close", data )
                 @onClose( data ) if typeof @onClose is "function"
             )
 
@@ -72,7 +70,6 @@
                 else
                     message = data
 
-                @emit( "message", message )
                 @onMessage( data ) if typeof @onMessage is "function"
             )
 
