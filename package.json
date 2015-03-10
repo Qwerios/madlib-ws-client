@@ -3,7 +3,7 @@
   "description": "Platform agnostic WebSocket client implementation",
   "main": "lib/node.js",
   "browser": "lib/browser.js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/Qwerios/madlib-ws-client.git"
