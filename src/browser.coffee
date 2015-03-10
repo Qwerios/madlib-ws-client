@@ -6,7 +6,7 @@
         define( [
         ], factory )
 
-)( ( WebSocket, Events ) ->
+)( () ->
     class WebsocketClient
 
         constructor: ( @host, @subProtocols = [], @autoJSON = true, @debug = false ) ->
