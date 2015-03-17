@@ -9,7 +9,7 @@
 )( () ->
     class WebsocketClient
 
-        constructor: ( @host, @subProtocols = [], @autoJSON = true, @debug = false ) ->
+        constructor: ( @host, @subProtocols = [], @autoJSON = true, @debug = true ) ->
             # NOTE: Only webbrowser websocket implementation supports sub-protocols
             # but I'm keeping the class signature the same for all variants
 
@@ -58,6 +58,7 @@
             )
 
             socket.addEventListener( "message", ( data ) =>
+                data = data.data if Ti? and data.data?
                 console.log( "[MADLIB-SOCKET] message", data ) if @debug
 
                 if @autoJSON
@@ -70,7 +71,7 @@
                 else
                     message = data
 
-                @onMessage( data ) if typeof @onMessage is "function"
+                @onMessage( message ) if typeof @onMessage is "function"
             )
 
         send: ( message ) ->
