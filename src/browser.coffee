@@ -9,7 +9,7 @@
 )( () ->
     class WebsocketClient
 
-        constructor: ( @host, @subProtocols = [], @autoJSON = true, @debug = true ) ->
+        constructor: ( @host, @subProtocols = [], @autoJSON = true, @debug = false ) ->
             # NOTE: Only webbrowser websocket implementation supports sub-protocols
             # but I'm keeping the class signature the same for all variants
 
